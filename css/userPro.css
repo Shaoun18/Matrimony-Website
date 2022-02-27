@@ -1,0 +1,154 @@
+/*==========================================Navbar part start============================================*/
+.navbar {
+    background: rgba(243, 216, 222, 0.75);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: all linear 0.3s;
+  }
+  .nav-bg {
+    background: rgb(233, 175, 188);
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    animation: bg 1s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 99999;
+  }
+  @keyframes bg {
+    from {
+      top: -50px;
+    }
+    to {
+      top: 0px;
+    }
+  }
+  .navbar-light .navbar-nav .nav-link:focus,
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #3084ca;
+  }
+  .navbar .navbar-brand img {
+    width: 130px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: #3084ca;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: msb;
+    transition: all linear 0.3s;
+    position: relative;
+    display: inline-block;
+  }
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #cb4561;
+  }
+  .navbar-light .navbar-nav .nav-link.active {
+    color: #cb4561;
+  }
+  .navbar-light .navbar-nav .nav-link:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #cb4561;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all linear 0.3s;
+  }
+  .navbar-light .navbar-nav .nav-link:hover::after {
+    opacity: 1;
+    width: 40%;
+  }
+  .navbar-light .navbar-nav .nav-link.active:after {
+    opacity: 1;
+    width: 40%;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+/*==========================================Navbar part start============================================*/
+
+
+  /*** insideIndex.html Part CSS Start From Here ***/
+@media (max-width: 768px) {
+    #inside-gallery .inside-gallery-bottom{
+        display: none;
+    }
+}
+#inside-gallery .gallery-top img{
+  height: 335px;
+  padding: 2px;
+}
+#inside-gallery .inside-gallery-bottom img{
+    height: 50px;
+    padding: 2px;
+}
+
+#inside-gallery .ih-item img {
+    width: 100%;
+}
+
+#inside-gallery .ih-item.square.colored.effect6.from_top_and_bottom{
+    position: relative;
+    width: 100%;
+    border: 1px solid #ffffff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+#inside-gallery .ih-item.square.effect6 {
+    overflow: hidden;
+}
+
+#inside-gallery .ih-item.square.effect6 .img {
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    filter: grayscale(40%);
+}
+
+#inside-gallery .ih-item.square.effect6 a:hover .img {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    filter: grayscale(0);
+}
+
+/*   Gallery end   */
+
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 90%;
+    height: 100%;
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -19%;
+    width: 90%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+

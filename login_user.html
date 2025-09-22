@@ -3,21 +3,19 @@
 
 <head>
   <meta charset="UTF-8" />
-  <tittle>
-    <h3></h3>
-  </tittle>
+  <title>User Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/all.min.css" />
   <link rel="stylesheet" href="css/pro-bars.min.css" />
   <link rel="stylesheet" href="css/slick.css" />
-  <!-- <link rel="stylesheet" href="css/lightbox.min.css" /> -->
   <link rel="stylesheet" href="css/venobox.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -30,36 +28,27 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#maleFeatured">Members</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="Profile.php">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Logout</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="login_user.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#maleFeatured">Members</a></li>
+          <li class="nav-item"><a class="nav-link" href="Profile.php">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <!--Navbar part end -->
-  <!-- Slider with search start-->
+
+  <!-- Slider -->
   <section style="padding-top: 80px">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./images/zh4.jpg" class="d-block w-100" alt="..." />
+          <img src="images/zh4.jpg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="./images/zh3.jpg" class="d-block w-100" alt="..." />
+          <img src="images/zh3.jpg" class="d-block w-100" alt="..." />
         </div>
         <div class="carousel-item">
-          <img src="./images/zh1.jpg" class="d-block w-100" alt="..." />
+          <img src="images/zh1.jpg" class="d-block w-100" alt="..." />
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -73,6 +62,7 @@
     </div>
   </section>
 
+  <!-- Search Section -->
   <section class="search-sec">
     <div class="container">
       <form action="#" method="post" novalidate="novalidate">
@@ -217,9 +207,8 @@
       </form>
     </div>
   </section>
-  <!-- Slider with search end -->
 
-  <!--Male Featured Profiles part start -->
+  <!-- Featured Profiles Example -->
   <section id="maleFeatured">
     <div class="container">
       <div class="row">
@@ -345,9 +334,7 @@
       </div>
     </div>
   </section>
-  <!--Male Featured part end -->
 
-  <!--Female Featured Profiles part start -->
   <section class="femaleFeatured">
     <div class="container">
       <div class="row">
@@ -473,52 +460,44 @@
       </div>
     </div>
   </section>
-  <!--Female Featured part end -->
+
   <br />
-  <!--Back to top button part start -->
+
   <a href="#" class="back-to-top">
     <i class="fas fa-chevron-up"></i>
   </a>
-  <!--Back to top button part end -->
 
-  <!--CopyRight part start -->
+
+  <!-- Footer -->
   <section id="footer-btm">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="fop-btm text-center">
             <h5>
-              Copyright © 2020. All rights reserved by
-              <a href="#">Undifiend</a>
+              Copyright © 2025. All rights reserved by
+              <a href="#">Undefined</a>
             </h5>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!--CopyRight part end -->
 
+  <!-- Scripts -->
   <script src="js/jquery-1.12.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <!-- <script src="js/jquery-ui.min.js"></script> -->
-  <script src="js/typed.min.js"></script>
-  <!-- <script src="js/visible.min.js" type="text/javascript"></script> -->
-  <script src="js/pro-bars.js" type="text/javascript"></script>
+  <script src="js/pro-bars.js"></script>
   <script src="js/slick.min.js"></script>
-  <!-- <script src="js/particles.js"></script> -->
-  <!-- <script src="js/app.js"></script> -->
-  <script src="js/waypoints.min.js"></script>
-  <script src="js/jquery.counterup.min.js"></script>
-  <script src="js/isotope.pkgd.js"></script>
-  <!-- <script src="js/lightbox.min.js"></script> -->
   <script src="js/jquery.mb.YTPlayer.min.js"></script>
   <script src="js/venobox.min.js"></script>
   <script src="js/custom.js"></script>
   <script>
-    $(".card__share > a").on("click", function (e) {
-      e.preventDefault(); // prevent default action - hash doesn't appear in url
-      $(this).parent().find("div").toggleClass("card__social--active");
-      //            $(this).toggleClass('fa-share-alt');
+    $(document).ready(function () {
+      $(".card__share > a").on("click", function (e) {
+        e.preventDefault();
+        $(this).parent().find("div").toggleClass("card__social--active");
+      });
     });
   </script>
 </body>

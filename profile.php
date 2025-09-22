@@ -1,3 +1,14 @@
+<?php
+// DB connect
+$conn = new mysqli("localhost", "root", "", "login_page");
+
+// get user data
+$user_id = 11; // example: logged-in user id
+$result  = $conn->query("SELECT * FROM userTable
+ WHERE id='$user_id'");
+$user = $result->fetch_assoc();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +47,7 @@
         <i class="fas fa-bars"></i>
       </button>
 
+      <!--Navbar Part start-->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -54,180 +66,165 @@
       </div>
     </div>
   </nav>
-  <!--Navbar part end -->
 
   <section>
-    	<div class="container emp-profile">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="profile-img">
-						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
-							alt="" />
-						<div class="file btn btn-lg btn-primary">
-							Change Photo
-							<input type="file" name="file" />
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="profile-head">
-						<p>
-							<span class="font-weight-bold">Name:</span> Amir Hamza
-						</p>
-						<p>
-							<span class="font-weight-bold">Mail:</span> ah.zahed00@gmail.com
-						</p>
-						<p>
-							<span class="font-weight-bold"> Gender:</span> Male
-							<span class="font-weight-bold">Age:</span>22
-							<span class="font-weight-bold"> Height:</span> 5ft 2in
-						</p>
-						<p>
-							<span class="font-weight-bold">Occupatoin:</span> Student
-						</p>
-						<p>
-							<a href="#"></a>
-							<a href="#"></a>
-							<a href="#"></a>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit" /> -->
-				</div>
-			</div>
-		</div>
+    <div class="container emp-profile">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="profile-img">
+            <img src="<?php echo $user['avatar']; ?>" alt="Profile" />
+            <div class="file btn btn-lg btn-primary">
+              Change Photo
+              <input type="file" name="file" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head">
+            <p><span class="font-weight-bold">Name:</span> <?php echo $user['name']; ?></p>
+            <p><span class="font-weight-bold">Mail:</span> <?php echo $user['email']; ?></p>
+            <p>
+              <span class="font-weight-bold">Gender:</span> <?php echo $user['gender']; ?>
+              <span class="font-weight-bold">Age:</span><?php echo $user['age']; ?>
+              <span class="font-weight-bold">Height:</span><?php echo $user['height']; ?>
+            </p>
+            <p><span class="font-weight-bold">Occupation:</span> <?php echo $user['occupation']; ?></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-<section>
-  <div class="container emp-profile-again">
-			<div class="row border p-4">
-				<div class="col-md-6">
-					<p>
-						<span class="font-weight-bold">Weight:</span> 75KG
-					</p>
-					<p>
-						<span class="font-weight-bold">Body Type</span> Average
-					</p>
-					<p>
-						<span class="font-weight-bold">Complexion:</span> Fair
-					</p>
-					<p>
-						<span class="font-weight-bold">Blood Group:</span> B+
-					</p>
-					<p>
-						<span class="font-weight-bold">Smoke:</span> Non Smoker
-					</p>
-					<hr class="w-100">
-				</div>
-				<div class="col-md-6">
-					<div class="profile-head">
-						<p>
-							<span class="font-weight-bold">Date of Birth:</span> 12/10/1996
-						</p>
-						<p>
-							<span class="font-weight-bold">Marital Status:</span> UnMarrid
-						</p>
 
-						<p>
-							<span class="font-weight-bold"> Religion:</span> Islam
-						</p>
-						<p>
-							<span class="font-weight-bold">Nationality:</span> Bangladeshi
-						</p>
-					</div>
-					<hr class="w-100">
-				</div>
-				<div class="col-md-6">
-					<div class="profile-head">
-						<p>
-							<span class="font-weight-bold">Education:</span> Bachelors
-						</p>
-						<p>
-							<span class="font-weight-bold">Education Details:</span> Bsc in Computer Science
-						</p>
+  <section>
+    <div class="container emp-profile-again">
+      <div class="row border p-4">
+        <div class="col-md-6">
+          <p>
+            <span class="font-weight-bold">Weight:</span> 75KG
+          </p>
+          <p>
+            <span class="font-weight-bold">Body Type</span> Average
+          </p>
+          <p>
+            <span class="font-weight-bold">Complexion:</span> Fair
+          </p>
+          <p>
+            <span class="font-weight-bold">Blood Group:</span> B+
+          </p>
+          <p>
+            <span class="font-weight-bold">Smoke:</span> Non Smoker
+          </p>
+          <hr class="w-100">
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head">
+            <p>
+              <span class="font-weight-bold">Date of Birth:</span> 12/10/1996
+            </p>
+            <p>
+              <span class="font-weight-bold">Marital Status:</span> UnMarrid
+            </p>
 
-						<p>
-							<span class="font-weight-bold">Working Sector:</span> Private Company
-						</p>
-						<p>
-							<span class="font-weight-bold">Profession:</span> Computer/ IT
-						</p>
-					</div>
-					<hr class="w-100">
-				</div>
-				<div class="col-md-6">
-					<div class="profile-head">
-						<p>
-							<span class="font-weight-bold">Father Status:</span> Business
-						</p>
-						<p>
-							<span class="font-weight-bold">Mother Status:</span> Homemaker
-						</p>
-						<p>
-							<span class="font-weight-bold">Home Devision:</span> Dhaka
-						</p>
+            <p>
+              <span class="font-weight-bold"> Religion:</span> Islam
+            </p>
+            <p>
+              <span class="font-weight-bold">Nationality:</span> Bangladeshi
+            </p>
+          </div>
+          <hr class="w-100">
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head">
+            <p>
+              <span class="font-weight-bold">Education:</span> Bachelors
+            </p>
+            <p>
+              <span class="font-weight-bold">Education Details:</span> Bsc in Computer Science
+            </p>
 
-						<p>
-							<span class="font-weight-bold">Currently Living in:</span> Dhaka
-						</p>
-						<p>
-							<span class="font-weight-bold">City Living in:</span> Bangladeshi
-						</p>
-					</div>
-					<hr class="w-100">
-				</div>
-			</div>
+            <p>
+              <span class="font-weight-bold">Working Sector:</span> Private Company
+            </p>
+            <p>
+              <span class="font-weight-bold">Profession:</span> Computer/ IT
+            </p>
+          </div>
+          <hr class="w-100">
+        </div>
+        <div class="col-md-6">
+          <div class="profile-head">
+            <p>
+              <span class="font-weight-bold">Father Status:</span> Business
+            </p>
+            <p>
+              <span class="font-weight-bold">Mother Status:</span> Homemaker
+            </p>
+            <p>
+              <span class="font-weight-bold">Home Devision:</span> Dhaka
+            </p>
 
-			<div class="row border p-4 mt-2">
-				<div class="col-lg-12">
-					<h4>Details</h4>
-					<p class="text-justify">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in
-						laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in
-						the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et
-						Malorum for use in a type specimen book.</p>
-				</div>
-			</div>
+            <p>
+              <span class="font-weight-bold">Currently Living in:</span> Dhaka
+            </p>
+            <p>
+              <span class="font-weight-bold">City Living in:</span> Bangladeshi
+            </p>
+          </div>
+          <hr class="w-100">
+        </div>
+      </div>
 
-			<div class="gallery border p-4 mt-2">
-				<h4>Gallery</h4>
-				<div class="row">
-					<div class="col-md-2 pt-2">
-						<div class="ih-item square colored effect6 from_top_and_bottom">
-							<a href="images/team1.jpeg" data-lightbox="myGallery" data-title="">
-								<div class="img">
-									<img src="images/team1.jpeg" height="50px" alt="img" class="img-fluid" />
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-2 pt-2">
-						<div class="ih-item square colored effect6 from_top_and_bottom">
-							<a href="images/team2.jpeg" data-lightbox="myGallery" data-title="">
-								<div class="img">
-									<img src="images/team2.jpeg" alt="img" class="img-fluid" />
-								</div>
-							</a>
-						</div>
-					</div>
-					<div class="col-md-2 pt-2">
-						<div class="ih-item square colored effect6 from_top_and_bottom">
-							<a href="images/team3.jpeg" data-lightbox="myGallery" data-title="">
-								<div class="img">
-									<img src="images/team3.jpeg" alt="img" class="img-fluid" />
-								</div>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
+      <div class="row border p-4 mt-2">
+        <div class="col-lg-12">
+          <h4>Details</h4>
+          <p class="text-justify">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in
+            laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in
+            the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et
+            Malorum for use in a type specimen book.</p>
+        </div>
+      </div>
 
-		</div>
-</section>
+      <div class="gallery border p-4 mt-2">
+        <h4>Gallery</h4>
+        <div class="row">
+          <div class="col-md-2 pt-2">
+            <div class="ih-item square colored effect6 from_top_and_bottom">
+              <a href="images/team1.jpeg" data-lightbox="myGallery" data-title="">
+                <div class="img">
+                  <img src="images/team1.jpeg" height="50px" alt="img" class="img-fluid" />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-2 pt-2">
+            <div class="ih-item square colored effect6 from_top_and_bottom">
+              <a href="images/team2.jpeg" data-lightbox="myGallery" data-title="">
+                <div class="img">
+                  <img src="images/team2.jpeg" alt="img" class="img-fluid" />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-2 pt-2">
+            <div class="ih-item square colored effect6 from_top_and_bottom">
+              <a href="images/team3.jpeg" data-lightbox="myGallery" data-title="">
+                <div class="img">
+                  <img src="images/team3.jpeg" alt="img" class="img-fluid" />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<script src="../js/jquery-1.12.4.min.js"></script>
-	<script src="../js/lightbox.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+    </div>
+  </section>
+
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/lightbox.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
 </body>
 
 </html>

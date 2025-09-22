@@ -272,8 +272,8 @@
 
                                     <div class="col-md-6">
                                         <label class="custom-file-upload">
-                                            <input type="file" />
-                                            No file Chosen
+                                            <input type="file" name="avatar" />
+                                            <span class="file-text">No file Chosen</span>
                                         </label>
                                     </div>
                                 </div>
@@ -292,7 +292,7 @@
                                     <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm
                                         Password:</label>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-6">
                                         <input id="password-confirm" type="password" class="form-control"
                                             name="password_confirmation" required autocomplete="new-password">
                                     </div>
@@ -304,8 +304,8 @@
                                     <a class="btn btn-primary" href="login.html">Login</a>
                                 </div>
 
+                            </form>
                         </div>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -316,7 +316,20 @@
 
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        const fileInput = document.querySelector('input[name="avatar"]');
+        const fileText = document.querySelector('.file-text');
+
+        fileInput.addEventListener('change', function () {
+            if (this.files && this.files.length > 0) {
+                fileText.textContent = this.files[0].name;
+            } else {
+                fileText.textContent = 'No file Chosen';
+            }
+        });
     </script>
+
+
 </body>
 
 </html>

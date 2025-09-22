@@ -65,8 +65,12 @@ if (mysqli_num_rows($result) > 0) {
     $reg = "INSERT INTO $table(name,email,age,height,gender,occupation,password,avatar)
             VALUES('$name','$email','$age','$height','$gender','$occupation','$password','$avatar')";
     if (mysqli_query($conn, $reg)) {
-        echo "<center><h1>Registration Successful</h1></center>";
+        header("Location: registration.html?msg=success");
+        exit();
+        // echo "<center><h1>Registration Successful</h1></center>";
     } else {
-        echo "<center><h1>Error: " . mysqli_error($conn) . "</h1></center>";
+        header("Location: registration.html?msg=error");
+        exit();
+        // echo "<center><h1>Error: " . mysqli_error($conn) . "</h1></center>";
     }
 }

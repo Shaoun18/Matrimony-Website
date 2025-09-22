@@ -316,6 +316,8 @@
 
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Avatar upload script  -->
     <script>
         const fileInput = document.querySelector('input[name="avatar"]');
         const fileText = document.querySelector('.file-text');
@@ -329,6 +331,27 @@
         });
     </script>
 
+    <!-- Toast Message Show  -->
+    <div id="toast"
+        style="position:fixed; bottom:20px; right:20px; padding:10px; background:#28a745; color:#fff; display:none; border-radius:5px;">
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const msg = params.get('msg');
+        if (msg) {
+            const toast = document.getElementById('toast');
+            if (msg === 'success') {
+                toast.textContent = 'Registration Successful';
+                toast.style.background = '#28a745';
+            } else {
+                toast.textContent = 'Error in Registration';
+                toast.style.background = '#dc3545';
+            }
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 4000);
+        }
+    </script>
 
 </body>
 

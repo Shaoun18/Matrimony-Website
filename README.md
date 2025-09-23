@@ -65,6 +65,11 @@ A simple Matrimony website built with PHP and MySQL. Users can register, login, 
     │   ├── lightbox.js
     │   └── ... (other JS files)
     │
+    ├── pages/
+    │   ├── allFemale.html
+    │   ├── allMale.html
+    │   └── UserProfile.html
+    │
     ├── login.php
     ├── login_user.html
     ├── home.php

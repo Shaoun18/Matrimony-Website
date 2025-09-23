@@ -42,8 +42,7 @@ A simple Matrimony website built with PHP and MySQL. Users can register, login, 
 
 ## File Structure
 
-    ```
-
+```
     Matrimony-Website/
     │
     ├── css/
@@ -76,9 +75,7 @@ A simple Matrimony website built with PHP and MySQL. Users can register, login, 
     ├── profile.php
     ├── logout.php
     └── README.md
-
-
-    ```
+```
 
 ## Usage
 
